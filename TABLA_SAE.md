@@ -21,12 +21,29 @@ Lo que cambió, y qué implica:
 |---|---|---|---|
 | `Origen`, `Zona` | no existían | desde el 23/10/2026 | No hay histórico por origen ni por zona. Cualquier serie larga por 911 vs Garden es imposible |
 | `Medio de origen` | no existía | desde el 13/11/2026 | Ídem; además todavía está 94 % vacía |
-| `Cuadricula` y `BARRIO` vacíos | 17,3 % | 8,3 % | Un conteo por barrio "crece" solo porque antes se georreferenciaba menos |
-| `Comuna` (DJP) vacía | 14,4 % | 1,1 % | Lo mismo por DJP: comparar 2025 con 2026 exagera el aumento |
-| Fuera de cuadrante | 17,1 % | 8,2 % | Es una mejora real de registro, no una caída de hechos sin cuadrante |
+| **Barrios en el programa** | ~110 | ~230 | **El programa se expandió**: un conteo por barrio o un total mensual crece en parte por esto, no solo por más hechos. Ver abajo |
+| `Comuna` (DJP) vacía | 14,4 % | 1,1 % | Comparar 2025 con 2026 exagera el aumento por DJP |
+| Fuera de cuadrante | 21,7 % | 5,0 % | **No es mejora de registro**: son barrios que se incorporaron y pasaron a tener cuadrante |
 | Formato de `Fecha Despacho` | con segundos (75 %) | sin segundos | Un parseo con formato fijo descarta decenas de miles de filas sin avisar |
 | Volumen mensual | ~5.100 | hasta 11.008 | Comparar meses sin normalizar lleva a conclusiones falsas |
 | Cifras ya publicadas | — | — | Las cartas se siguen editando: los aprehendidos de un período cerrado ya no dan igual que en la exposición |
+
+### La expansión del programa (medida sobre los datos)
+
+Los 234 barrios no estuvieron siempre: se fueron sumando. Contando barrios distintos con hechos por mes:
+
+| | sep 25 – mar 26 | abr 26 | jun 26 | jul 26 | **ago 26** | oct 26 |
+|---|---|---|---|---|---|---|
+| Barrios | ~110 | 136 | 161 | 185 | **223** | 230 |
+| Hechos del mes | ~5.200 | 5.747 | 5.644 | 6.190 | **9.262** | 11.008 |
+| Fuera de cuadrante (cargado) | ~21 % | 13,7 % | 13,6 % | 13,5 % | **7,6 %** | 6,5 % |
+| Fuera de cuadrante (geometría) | ~5,5 % | 6,0 % | 6,4 % | 6,8 % | 7,4 % | 6,6 % |
+
+El programa **duplicó su cobertura entre marzo y agosto de 2026**, de unos 110 barrios a 223. El salto de volumen de agosto (de 6.190 a 9.262 hechos, un 50 % más) coincide exactamente con ese mes.
+
+Esto explica también la caída de "fuera de cuadrante" del 21 % al 5 %: **no fue que se registrara mejor**, sino que barrios que antes quedaban afuera se incorporaron y pasaron a tener cuadrante. La prueba es la última fila: medido por geometría contra los polígonos de hoy, el porcentaje de hechos realmente fuera del área se mantiene plano entre 5 % y 7 % todo el período.
+
+**Consecuencia para los informes**: cualquier serie larga de hechos, por barrio o total, mezcla dos cosas, más actividad y más cobertura. Para comparar en serio hay que normalizar, por ejemplo midiendo hechos por barrio adherido, o restringiendo la comparación a los barrios que ya estaban en el período más viejo.
 
 **Regla antes de comparar dos períodos**: verificar que la columna existía en los dos y que estaba igual de completa. Si no, decirlo al pie del informe o directamente no hacer esa comparación.
 

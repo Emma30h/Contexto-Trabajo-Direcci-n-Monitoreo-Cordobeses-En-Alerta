@@ -23,6 +23,12 @@ Resumen de la exposición general "Cordobeses en Alerta" (noviembre 2026), que c
 - **Turnos**: A·B 07 a 15 Hs, C·D 15 a 23 Hs, E·F 23 a 07 Hs. Cada turno trabaja 2 días y descansa 2; los dos turnos de cada franja se alternan. Un superior de turno cubre de 7 a 19 Hs y otro de 19 a 7 Hs.
 - Ya no existe la "Base de Coordinación": su personal pasó a la División Alerta.
 
+## Cómo creció el programa
+
+Los 234 barrios no estuvieron desde el principio; se fueron sumando. Medido sobre los hechos del SAE, los barrios con actividad pasan de unos **110 entre septiembre de 2025 y marzo de 2026** a **223 en agosto de 2026** y ~230 en octubre. La cobertura se duplicó entre marzo y agosto de 2026, y el volumen mensual de hechos saltó en el mismo momento, de 6.190 en julio a 9.262 en agosto.
+
+Tenerlo presente al comparar períodos: buena parte del crecimiento de hechos es crecimiento de cobertura. Ver `TABLA_SAE.md`.
+
 ## Glosario (usar siempre así)
 
 - **Base Olimpo**: la sala (cabinas y radio operadores).
