@@ -40,6 +40,12 @@ Para entender **cómo funciona la dependencia** (estructura, glosario, recorrido
 
 Para leer la **tabla de hechos del SAE** (problemas del archivo, diccionario, cómo se reconstruyen las cifras de las placas) y para **geolocalizar hechos** (barrio, cuadrante, fuera de cuadrante, DJP, móvil): leer `TABLA_SAE.md` y usar los scripts `leer_tabla_sae.py` y `geolocalizar_sae.py`.
 
+## Respaldo (dónde vive cada cosa)
+
+- **Guías y scripts** (los `.md` y los `.py`): repo de GitHub `Emma30h/Contexto-Trabajo-Direcci-n-Monitoreo-Cordobeses-En-Alerta`. Es la versión que manda. Al terminar un cambio en estos archivos, commitear y pushear.
+- **Datos de origen** (CSV, PDF, KML, logos, imágenes): carpeta `DMCA Claude` en Google Drive. No van al repo: pesan mucho y tienen datos personales.
+- **Para restaurar en una máquina nueva**: clonar el repo en una carpeta llamada `DMCA Claude`, bajar las subcarpetas de datos desde Drive y ponerlas adentro, y en Claude escritorio usar + → Add folder.
+
 ## Reglas de trabajo
 
 1. Los archivos originales de esta carpeta no se modifican: se trabaja sobre copias y los resultados van en una subcarpeta nueva.
