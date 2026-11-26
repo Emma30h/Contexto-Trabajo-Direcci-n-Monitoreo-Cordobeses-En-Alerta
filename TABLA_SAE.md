@@ -28,9 +28,19 @@ Lo que cambió, y qué implica:
 | Volumen mensual | ~5.100 | hasta 11.008 | Comparar meses sin normalizar lleva a conclusiones falsas |
 | Cifras ya publicadas | — | — | Las cartas se siguen editando: los aprehendidos de un período cerrado ya no dan igual que en la exposición |
 
-### La expansión del programa (medida sobre los datos)
+### La expansión del programa
 
-Los 234 barrios no estuvieron siempre: se fueron sumando. Contando barrios distintos con hechos por mes:
+El padrón oficial está en `Barrios/Nuevos barrios_ Ojos en alerta.xlsx` y se lee con **`barrios_programa.py`**, que devuelve por barrio el cuadrante, la UT, la población y la **fecha de incorporación**. Son **234 barrios y 795.421 habitantes cubiertos**.
+
+Las incorporaciones fueron en tres tandas:
+
+| Fecha | Barrios | Acumulado |
+|---|---|---|
+| 14/10/2024 | 7 | 7 |
+| feb a oct 2025 (10 fechas) | 137 | 144 |
+| **22 y 23/07/2026** | **90** | **234** |
+
+Después de octubre de 2025 el programa estuvo nueve meses sin sumar barrios, y el 22 y 23 de julio de 2026 incorporó 90 de una vez. Eso se ve en los datos contando barrios distintos con hechos por mes:
 
 | | sep 25 – mar 26 | abr 26 | jun 26 | jul 26 | **ago 26** | oct 26 |
 |---|---|---|---|---|---|---|
@@ -43,7 +53,43 @@ El programa **duplicó su cobertura entre marzo y agosto de 2026**, de unos 110 
 
 Esto explica también la caída de "fuera de cuadrante" del 21 % al 5 %: **no fue que se registrara mejor**, sino que barrios que antes quedaban afuera se incorporaron y pasaron a tener cuadrante. La prueba es la última fila: medido por geometría contra los polígonos de hoy, el porcentaje de hechos realmente fuera del área se mantiene plano entre 5 % y 7 % todo el período.
 
-**Consecuencia para los informes**: cualquier serie larga de hechos, por barrio o total, mezcla dos cosas, más actividad y más cobertura. Para comparar en serio hay que normalizar, por ejemplo midiendo hechos por barrio adherido, o restringiendo la comparación a los barrios que ya estaban en el período más viejo.
+### Cuánto creció de verdad
+
+Con las fechas de incorporación se puede separar una cosa de la otra. Tomando solo la **cohorte original**, los 144 barrios que ya estaban antes de 2026 (507.738 habitantes), los hechos por mes fueron:
+
+| oct 25 | ene 26 | abr 26 | jul 26 | **ago 26** | sep 26 | oct 26 |
+|---|---|---|---|---|---|---|
+| 3.775 | 4.293 | 4.864 | 5.076 | **6.008** | 6.111 | 6.858 |
+
+O sea que **sí hubo crecimiento real**: en los mismos barrios, de unos 4.300 hechos mensuales a principios de 2026 a 6.858 en octubre, un 58 % más.
+
+Y el salto de agosto se puede descomponer: de los ~3.070 hechos que creció el mes contra julio, unos **2.140 vinieron de los barrios nuevos y unos 930 de los viejos**. Dos tercios cobertura, un tercio más actividad.
+
+**Consecuencia para los informes**: cualquier serie larga mezcla las dos cosas. Para comparar en serio, restringir a la cohorte original o medir por población.
+
+### Hechos por habitante
+
+El padrón trae la población de cada barrio, así que se puede calcular una tasa comparable. Tomando **octubre de 2026**, cuando ya estaban los 234 barrios incorporados:
+
+| Cuadrante | Hechos | Población | Por 1.000 hab |
+|---|---|---|---|
+| 5 · San Vicente | 1.179 | 60.193 | **19,6** |
+| 7 · Caseros | 1.631 | 112.252 | 14,5 |
+| 8 · Pueyrredón | 825 | 58.790 | 14,0 |
+| 4 · Yofre | 920 | 67.159 | 13,7 |
+| 6 · Inaudi | 774 | 65.221 | 11,9 |
+| 2 · Urca | 1.676 | 144.895 | 11,6 |
+| 1 · Quebrada | 1.090 | 100.169 | 10,9 |
+| 3 · Alta Córdoba | 1.755 | 186.742 | 9,4 |
+| **Ciudad** | | **795.421** | **12,4** |
+
+Ordenados por volumen, Alta Córdoba encabeza; ordenados por habitante, queda último y San Vicente duplica al promedio. **En los informes conviene mostrar las dos columnas**, porque dicen cosas distintas.
+
+### Nomenclador de barrios
+
+Hay tres listas de nombres que no coinciden: el padrón (234), el campo `BARRIO` del SAE (286 valores distintos) y el KML (231). Las diferencias son casi todas de escritura (`DOS DE ABRIL` contra `2 DE ABRIL`, `GHANDI` contra `GANDHI`, `JARDIN CLARET` contra `JARDIN DE CLARET`), más typos y nombres truncados del SAE (`CARVECEROS`, `BIALET MIASSE`, `DA SAN ROQUE` por `BAJADA SAN ROQUE`).
+
+`tabla_equivalencias()` de `barrios_programa.py` arma el puente por similitud y deja el resultado en **`barrios_equivalencias.csv`**: 256 coincidencias exactas, 34 de alta confianza y **80 marcadas `revisar`** que hay que validar a mano (ojo con casos como `SMATA 1` contra `SMATA 2`, que son barrios distintos). Con las dos primeras categorías ya se le asigna barrio oficial al **88,5 %** de los hechos.
 
 **Regla antes de comparar dos períodos**: verificar que la columna existía en los dos y que estaba igual de completa. Si no, decirlo al pie del informe o directamente no hacer esa comparación.
 

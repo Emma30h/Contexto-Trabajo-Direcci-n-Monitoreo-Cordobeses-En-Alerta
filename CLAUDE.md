@@ -17,6 +17,7 @@ Contexto para Claude. Leer esto al empezar cualquier tarea en esta carpeta.
 | `Exposiciones DMCA/` | URL de la exposición general (en GitHub Pages) que cuenta cómo funciona la Dirección. Contexto en `FUNCIONAMIENTO.md`; diseño y armado en `EXPOSICION.md`. |
 | `Table de Hechos SAE Historico/` | Dos CSV contiguos con el histórico del SAE: 94.612 hechos del 18/09/2025 al 19/11/2026. **Leer `TABLA_SAE.md` y cargarlos con `cargar_historico()` de `leer_tabla_sae.py`.** Tienen datos sensibles. |
 | `Trabajos de Estadistica/` | Ejemplos de los trabajos estadísticos del SAE (informe semanal de 24 págs, placas 911 y numérica, placa de adherentes). Hay que reproducirlos **tal cual**: ver `ESTADISTICA.md`. |
+| `Barrios/` | `Nuevos barrios_ Ojos en alerta.xlsx`: padrón oficial de los 234 barrios con cuadrante, UT, población y **fecha de incorporación**. Se lee con `barrios_programa.py`. |
 | `Logos/` | Logos oficiales. Hoy: `iso_blanco.png` (isotipo del ojo con contorno blanco, para fondos oscuros). Usar siempre estos archivos. |
 | `Frecuencia RugGear/` | Imagen con la configuración de frecuencias del equipo RugGear. |
 
@@ -38,7 +39,7 @@ Para informes o placas **estadísticas del SAE** leer además `ESTADISTICA.md`: 
 
 Para entender **cómo funciona la dependencia** (estructura, glosario, recorrido de un hecho, cifras) leer `FUNCIONAMIENTO.md`. Para hacer **presentaciones o exposiciones** con el mismo estilo, leer `EXPOSICION.md` (datos técnicos) y `PRESENTACIONES.md` (cómo se diseñan y se cuentan: grilla, catálogo de láminas, animaciones, voz).
 
-Para leer la **tabla de hechos del SAE** (problemas del archivo, diccionario, cómo se reconstruyen las cifras de las placas) y para **geolocalizar hechos** (barrio, cuadrante, fuera de cuadrante, DJP, móvil): leer `TABLA_SAE.md` y usar los scripts `leer_tabla_sae.py` y `geolocalizar_sae.py`.
+Para leer la **tabla de hechos del SAE** (problemas del archivo, diccionario, cómo se reconstruyen las cifras de las placas) y para **geolocalizar hechos** (barrio, cuadrante, fuera de cuadrante, DJP, móvil): leer `TABLA_SAE.md` y usar los scripts `leer_tabla_sae.py`, `geolocalizar_sae.py` y `barrios_programa.py`.
 
 ## Respaldo (dónde vive cada cosa)
 
