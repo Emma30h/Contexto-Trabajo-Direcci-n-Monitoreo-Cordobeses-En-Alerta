@@ -1,0 +1,19 @@
+# Datos de origen: NO se versionan (pesan mucho y tienen datos personales:
+# teléfonos de denunciantes, relatos con domicilios, legajos del personal).
+# Viven en la carpeta local y en Google Drive.
+*.csv
+*.pdf
+*.kml
+*.xlsx
+*.docx
+*.pptx
+*.jpg
+*.jpeg
+*.png
+*.mp4
+*.html
+
+# Python
+__pycache__/
+*.pyc
+.venv/
