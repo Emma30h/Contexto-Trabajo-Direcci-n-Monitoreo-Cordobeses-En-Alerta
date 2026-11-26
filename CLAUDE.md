@@ -48,6 +48,7 @@ Para leer la **tabla de hechos del SAE** (problemas del archivo, diccionario, c�
 
 ## Reglas de trabajo
 
+0. **Mantener el repo al día.** Esta carpeta está versionada en GitHub (`Emma30h/Contexto-Trabajo-Direcci-n-Monitoreo-Cordobeses-En-Alerta`, rama `main`). Cada vez que se cree o se cambie una guía `.md` o un script `.py` de esta carpeta, **commitear y pushear en la misma sesión**, sin esperar a que el usuario lo pida. Es un repo de contexto, no de producción: acá no hace falta rama aparte ni confirmación previa (la regla 2 es para los repos de las aplicaciones). Lo que sí: nunca commitear datos (CSV, PDF, KML, imágenes); el `.gitignore` ya los excluye, no tocarlo. Si al terminar una tarea quedaron cambios sin pushear, avisarlo.
 1. Los archivos originales de esta carpeta no se modifican: se trabaja sobre copias y los resultados van en una subcarpeta nueva.
 2. Antes de subir cambios a `master` de cualquier repo, confirmar con el usuario. Por defecto: rama aparte y aviso.
 3. Datos de personal policial (nombres, DNI, legajos) son sensibles: no copiarlos a otros lados ni publicarlos.
